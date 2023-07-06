@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:model1/a.dart';
 
 class PageB extends StatelessWidget{
+  PageB({required this.email,super.key});
+
+  String email;
+
   @override
   Widget build(BuildContext context) {
     double widthScreen = MediaQuery.of(context).size.width;
@@ -11,7 +15,7 @@ class PageB extends StatelessWidget{
       body: Container(
         width: widthScreen,
         height: heightScreen,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment(0.4, 1),
@@ -31,7 +35,7 @@ class PageB extends StatelessWidget{
             children:[
             //o 1
             Container(
-              padding: EdgeInsets.fromLTRB(26, 71, 32, 19),
+              padding: const EdgeInsets.fromLTRB(26, 71, 32, 19),
               height: 493,
               width: widthScreen,
               child: Column(
@@ -44,20 +48,20 @@ class PageB extends StatelessWidget{
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        
+
                         GestureDetector(
-                          child: Image(image: AssetImage('assets/icons/arrow.png'),
+                          child: const Image(image: AssetImage('assets/icons/arrow.png'),
                           width: 40, height: 40),
                           onTap: (){
-                            Navigator.push(
+                            Navigator.pop(
                                 context,
                                 MaterialPageRoute(
                                 builder: (context) =>
-                                PageA()));
+                                LoginPage()));
                           },
                         ),
-                        
-                        Image(image: AssetImage('assets/icons/girl.png'))
+
+                        const Image(image: AssetImage('assets/icons/girl.png'))
                       ],
                     ),
                   ),
@@ -65,19 +69,20 @@ class PageB extends StatelessWidget{
                   //Link với tên mail lúc đăng nhập
                   Container(
                     height: 22,
-                    width: 97,
-                    color: Colors.green,
-                    child: Text('Dien Email vao day',
-                    style: TextStyle(color: Colors.white, fontSize: 14))
+                    width: 200,
+                    //color: Colors.green,
+                    child: Text(email,
+                    style: const TextStyle(color: Colors.white, fontSize: 18,
+                    fontWeight: FontWeight.w700))
                   ),
 
                   //Card
                   Container(
-                    margin: EdgeInsets.only(top: 20, bottom: 25),
-                      padding: EdgeInsets.fromLTRB(31, 25, 21, 26),
+                    margin: const EdgeInsets.only(top: 20, bottom: 25),
+                      padding: const EdgeInsets.fromLTRB(31, 25, 21, 26),
                       height: 223,
                       width: widthScreen,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           gradient: LinearGradient(
                               begin: Alignment.topLeft,
                               end: Alignment(0.4, 1),
@@ -113,7 +118,7 @@ class PageB extends StatelessWidget{
                         ),
 
                         //Raidio
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Image(image: AssetImage('assets/icons/wifi.png'),
@@ -126,11 +131,11 @@ class PageB extends StatelessWidget{
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Container(
-                              margin: EdgeInsets.only(top: 58.01, bottom:16),
+                              margin: const EdgeInsets.only(top: 58.01, bottom:16),
                               width: 218,
                               height: 24,
                               //color: Colors.green,
-                              child: Text('0987 6543 2100 0000',
+                              child: const Text('0987 6543 2100 0000',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 21,fontWeight: FontWeight.w500
@@ -148,7 +153,7 @@ class PageB extends StatelessWidget{
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 17,
                                 width: 40,
                                 child: Text('11/16',
@@ -163,7 +168,7 @@ class PageB extends StatelessWidget{
                                 height: 31,
                                 width: 50,
                                 //color: Colors.red,
-                                child: Column(
+                                child: const Column(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Image(image: AssetImage('assets/icons/mastercard.png'),
@@ -197,7 +202,7 @@ class PageB extends StatelessWidget{
                           height: 63,
                           width: 103,
                           //color: Colors.lightGreen,
-                          child: Column(
+                          child: const Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -206,7 +211,7 @@ class PageB extends StatelessWidget{
                                 fontSize: 18, color: Colors.white
                               ),),
 
-                              Text('5,644.00',
+                              Text('\$5,644.00',
                                 style: TextStyle(
                                     fontSize: 21, color: Colors.white
                                 ),),
@@ -229,16 +234,16 @@ class PageB extends StatelessWidget{
                                   Container(
                                     height: 42,
                                     width: 42,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color.fromARGB(255, 4, 2, 104),
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(10)),
                                     ),
-                                    child: Image(image:
+                                    child: const Image(image:
                                     AssetImage('assets/icons/history.png',),
                                       width: 20.5, height: 20.5,),
                                   ),
-                                  Text('History', style: TextStyle(
+                                  const Text('History', style: TextStyle(
                                     fontSize: 12, color: Colors.white
                                   ))
                                 ],
@@ -252,16 +257,16 @@ class PageB extends StatelessWidget{
                                   Container(
                                     height: 42,
                                     width: 42,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Color.fromARGB(255, 4, 2, 104),
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(10)),
                                     ),
-                                    child: Image(image:
+                                    child: const Image(image:
                                     AssetImage('assets/icons/transfer12.png'),
                                       width: 20.5, height: 20.5,),
                                   ),
-                                  Text('Send', style: TextStyle(
+                                  const Text('Send', style: TextStyle(
                                       fontSize: 12, color: Colors.white
                                   ))
                                 ],
@@ -280,10 +285,10 @@ class PageB extends StatelessWidget{
 
             // o 2
             Container(
-              padding: EdgeInsets.fromLTRB(24, 23.95, 30, 46),
+              padding: const EdgeInsets.fromLTRB(24, 23.95, 30, 46),
               height: 288,
               width: widthScreen,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 4, 2, 104),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
                 topRight:Radius.circular(30))
@@ -295,12 +300,12 @@ class PageB extends StatelessWidget{
                   Container(
                     height: 3,
                     width: 85.93,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(30))
                     ),
                   ),
-                  SizedBox(height: 18.05),
+                  const SizedBox(height: 18.05),
 
                   Container(
                     width: widthScreen,
@@ -315,19 +320,19 @@ class PageB extends StatelessWidget{
                           Container(
                             height: 20,
                             width: 49,
-                            child: Text('Today',
+                            child: const Text('Today',
                             style: TextStyle(
                               fontSize: 17, color: Colors.white
                             )),
                           ),
 
-                          SizedBox(height: 34),
+                          const SizedBox(height: 34),
 
                           //transfer
                           Container(
                             height: 44,
                             width: widthScreen,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               //border: Border.all(width: 1, color: Colors.white)
                             ),
                             child: Row(
@@ -339,7 +344,7 @@ class PageB extends StatelessWidget{
                                   width: 200,
                                   height: 44,
                                   //color: Colors.green,
-                                  child: Row(
+                                  child: const Row(
                                     children: [
                                       Image(image:
                                       AssetImage('assets/icons/transfer.png'),
@@ -359,20 +364,20 @@ class PageB extends StatelessWidget{
                                     ],
                                   ),
                                 ),
-                                Text('-125.00', style: TextStyle(
+                                const Text('-\$125.00', style: TextStyle(
                                     fontSize: 15.5, color: Colors.white
                                 ))
                               ],
                             ),
                           ),
 
-                          SizedBox(height: 21),
+                          const SizedBox(height: 21),
 
                           //Netflix
                           Container(
                             height: 44,
                             width: widthScreen,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 //border: Border.all(width: 1, color: Colors.white)
                             ),
                             child: Row(
@@ -384,7 +389,7 @@ class PageB extends StatelessWidget{
                                   width: 200,
                                   height: 44,
                                   //color: Colors.green,
-                                  child: Row(
+                                  child: const Row(
                                     children: [
                                       Image(image:
                                       AssetImage('assets/icons/clapperboard.png'),
@@ -404,20 +409,20 @@ class PageB extends StatelessWidget{
                                     ],
                                   ),
                                 ),
-                                Text('-55.00', style: TextStyle(
+                                const Text('-\$55.00', style: TextStyle(
                                     fontSize: 15.5, color: Colors.white
                                 ))
                               ],
                             ),
                           ),
 
-                          SizedBox(height: 21),
+                          const SizedBox(height: 21),
 
                           //Shopping
                           Container(
                             height: 44,
                             width: widthScreen,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               //border: Border.all(width: 1, color: Colors.white)
                             ),
                             child: Row(
@@ -429,7 +434,7 @@ class PageB extends StatelessWidget{
                                   width: 200,
                                   height: 44,
                                   //color: Colors.green,
-                                  child: Row(
+                                  child: const Row(
                                     children: [
                                       Image(image:
                                       AssetImage('assets/icons/shopping.png'),
@@ -449,14 +454,14 @@ class PageB extends StatelessWidget{
                                     ],
                                   ),
                                 ),
-                                Text('-37.00', style: TextStyle(
+                                const Text('-\$37.00', style: TextStyle(
                                     fontSize: 15.5, color: Colors.white
                                 ))
                               ],
                             ),
                           ),
 
-                          SizedBox(height: 21),
+                          const SizedBox(height: 21),
 
                         ],
                       ),
