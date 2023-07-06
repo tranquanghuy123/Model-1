@@ -136,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
 
                   //Password
                   TextField(
-                    keyboardType: TextInputType.emailAddress,
+                    keyboardType: TextInputType.text,
                     controller: passwordController,
                     decoration: InputDecoration(
                       labelText: 'Password',
